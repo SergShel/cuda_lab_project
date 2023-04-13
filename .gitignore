@@ -1,0 +1,15 @@
+.vscode
+__pycache__/
+models/
+data/
+videos/
+imgs/
+cocoapi/
+src/.ipynb_checkpoints/
+__init__.py
+tboard_logs/
+models/
+CudaLab_Models
+*.zip
+documents
+requirements.txt
