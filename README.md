@@ -27,3 +27,13 @@ with the results obtained by using the model to process the data with the tempor
 Analysis is given through the whole method itself and results, for the model design and its evaluation, 
 we also discuss about limitations during the development of the project itself, difficulties and challenges of the process and task as a whole, 
 as well as possible aspects of improvement.
+
+## Architecture
+
+<p align="center">
+  <img class="center" src="resources/doc_imgs/Model_temporal_2.png" width="50%" >
+</p>
+
+
+
+
