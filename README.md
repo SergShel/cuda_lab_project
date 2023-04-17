@@ -6,6 +6,8 @@ The idea for this work is taken from the paper
 [Recurrent U-Net for Resource-Constrained Segmentation.](https://openaccess.thecvf.com/content_ICCV_2019/papers/Wang_Recurrent_U-Net_for_Resource-Constrained_Segmentation_ICCV_2019_paper.pdf)<br>
 Training and evaluation is done with  [Cityscapes dataset.](https://www.cityscapes-dataset.com/)
 
+[Task formulation](https://github.com/SergShel/cuda_lab_project/blob/main/docs/Project%2022%20WS_%20Video%20Semantic%20Segmentation.pdf) - this document describes the goals of the project and propose the approach to solve them.
+
 
 ## Introduction
 
@@ -30,8 +32,20 @@ as well as possible aspects of improvement.
 
 ## Architecture
 
+In our approach we extended a UNet architecture \cite{unet} by incorporating convolutional recurrent neural network units (cRNN) and convolutional gated recurrent units (cGRU) as temporal units. Our proposed architecture can be decomposed into multiple encoding and decoding layers, each consisting of multiple typical convolutional block that include 2D-Convolutions, batch-normalization, an activation function, each encoder block including down-sampling done with a convolution and each decoder block including up-sampling done with a transposed convolution. At the end of each encoder block we include one of the convolutional temporal cells, either cRNN or cGRU to capture the temporal dependencies in the image data, while at the decoder blocks we concatenate with the hidden state given by either cRNN or cGRU. 
+
+The following figure presents the general model architecture
+
 <p align="center">
   <img class="center" src="resources/doc_imgs/Model_temporal_2.png" width="50%" >
+</p>
+
+Please refer to our [report](https://github.com/SergShel/cuda_lab_project/blob/main/docs/CudaLab_Report.pdf) for further information on the architecture, design of the training and detailed results.
+
+## Results
+
+<p align="center">
+  <img class="center" src="resources/gifs/Temporal/Temporal_ResUNetConfig_Conv2dGRUCell_SmallDeep_high_res/1.gif" width="80%" >
 </p>
 
 
