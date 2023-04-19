@@ -44,10 +44,63 @@ Please refer to our [report](https://github.com/SergShel/cuda_lab_project/blob/m
 
 ## Results
 
+### Baselines:
+
+#### Vanilla Original size:
+<p align="center">
+  <img class="center" src="resources/gifs/Baselines/BaselineVanillaOriginalSizes_high_res/1.gif" width="80%" >
+</p>
+
+#### VanillaSmallDeep:
+<p align="center">
+  <img class="center" src="resources/gifs/Baselines/BaselineVanillaSmallDeep_high_res/1.gif" width="80%" >
+</p>
+
+#### BaselineVanillaSmallShallow:
+<p align="center">
+  <img class="center" src="rresources/gifs/Baselines/BaselineVanillaSmallShallow_high_res/1.gif" width="80%" >
+</p>
+
+According to the validation metrics (mIoU and mAcc) "Vanilla Original size"-model should perform better then other 2. But visually we can see that VanillaSmallDeep is the leader. All the predictions (even by VanillaSmallDeep) have some chaotic flickering by changing frames.
+
+You can find more visualizations for these 3 (baseline) models here: [resources/gifs/Baselines](resources/gifs/Baselines)
+
+### Temporal models
+
+#### ResUNet with Conv2dGRUCell SmallDeep:
 <p align="center">
   <img class="center" src="resources/gifs/Temporal/Temporal_ResUNetConfig_Conv2dGRUCell_SmallDeep_high_res/1.gif" width="80%" >
 </p>
 
+#### ResUNet with Conv2dGRUCell SmallShallow:
+<p align="center">
+  <img class="center" src="resources/gifs/Temporal/Temporal_ResUNetConfig_Conv2dGRUCell_SmallShallow_high_res/1.gif" width="80%" >
+</p>
+
+#### ConvUNext with Conv2dGRUCell SmallDeep:
+<p align="center">
+  <img class="center" src="resources/gifs/Temporal/Temporal_ConvUNextConfig_Conv2dGRUCell_SmallDeep_high_res/1.gif" width="80%" >
+</p>
+
+#### VanillaUNet with Conv2dGRUCell SmallShallow:
+<p align="center">
+  <img class="center" src="resources/gifs/Temporal/Temporal_VanillaUNetConfig_Conv2dGRUCell_SmallShallow_high_res/1.gif" width="80%" >
+</p>
+
+#### VanillaUNet  with Conv2dRNNCell SmallShallow:
+<p align="center">
+  <img class="center" src="resources/gifs/Temporal/Temporal_VanillaUNetConfig_Conv2dRNNCell_SmallShallow_high_res/1.gif" width="80%" >
+</p>
+
+According to the validation metrics (mAcc and mIoU) the leader in the group of temporal models has to be "ResUNet with Conv2dGRUCell SmallDeep". That corresponds to the observed results.<br>
+
+You can find more visualizations for these 3 (temporal) models here: [resources/gifs/Temporal](resources/gifs/Temporal)
+
+In general, we can observe the following pattern: <br>
+* first image in the sequence has some level of false predicted regions
+* every following frame has better prediction
 
 
+
+These results prove the advantage of usage of recurrent modules as part of U-Net
 
