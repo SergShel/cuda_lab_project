@@ -44,7 +44,7 @@ Please refer to our [report](https://github.com/SergShel/cuda_lab_project/blob/m
 
 ## Results
 
-### Baselines:
+### Baselines (without temporal component):
 
 #### Vanilla Original size:
 <p align="center">
@@ -58,7 +58,7 @@ Please refer to our [report](https://github.com/SergShel/cuda_lab_project/blob/m
 
 #### BaselineVanillaSmallShallow:
 <p align="center">
-  <img class="center" src="rresources/gifs/Baselines/BaselineVanillaSmallShallow_high_res/1.gif" width="80%" >
+  <img class="center" src="resources/gifs/Baselines/BaselineVanillaSmallShallow_high_res/1.gif" width="80%" >
 </p>
 
 According to the validation metrics (mIoU and mAcc) "Vanilla Original size"-model should perform better then other 2. But visually we can see that VanillaSmallDeep is the leader. All the predictions (even by VanillaSmallDeep) have some chaotic flickering by changing frames.
